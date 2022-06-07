@@ -22,7 +22,3 @@ This page asks the user to comfirm the ride and leave their information (name, e
 1. create an account
 2. delete a ride
 3. cancel booking (before 48 hours)
-
-## How to Set Up
-1. Download the code 
-2. In terminal, locate the downloaded folder and install flask with `pip install Flask`
