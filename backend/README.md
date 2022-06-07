@@ -61,7 +61,7 @@
 
 
 ## Comfirm a ride
-`PUT/ride/{id}
+`PUT/ride/{id}`
 
 
 ## Cancel booking

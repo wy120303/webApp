@@ -18,7 +18,17 @@ This page displayed all the details regarding the ride. On the buttom left, ther
 ### Comfirm
 This page asks the user to comfirm the ride and leave their information (name, email, and phone numnber). On the buttom left, there is a "Back to Search" buttom if the user no longer wants to book this ride. Upon the user confirmed this ride, their information will be sent to the poster of the ride and they will receive a confirmation email that include ride details and the poster's information. 
 
-### Addtional features 
-1. create an account
-2. delete a ride
-3. cancel booking (before 48 hours)
+### Account Information
+This page displays the account information of the user, including name, registered email, phone number, the rides they posted, and/or the ride they booked. 
+
+### Cancel Booking
+This page can be accessed from account information. If the user have booked any rides, they can cancel it and the poster of the ride will receive an email about this cancellation.
+
+### Delate a ride
+This page can be accessed from account information. If the user has posted a ride but can no longer offer it, they can delete the ride here. If there are customers who have booked this ride, a confirmation email will be sent to the customers. 
+
+### Register for an account
+This page is used for the user to register their account or log in to their account if they have one already.
+
+### Account log in
+Where the user can log into their account or register for a new one if they need.
