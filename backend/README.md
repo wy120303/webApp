@@ -5,7 +5,7 @@
 4. install the requirements.txt file
 5. using flask: in command line, type in 
  ``` 
-    export FLASK_APP=hello
+   export FLASK_APP=hello
    flask run
 ```
 
