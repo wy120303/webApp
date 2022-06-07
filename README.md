@@ -30,5 +30,5 @@ This page can be accessed from account information. If the user has posted a rid
 ### Register for an account
 This page is used for the user to register their account or log in to their account if they have one already.
 
-### Account log in
+### Account login
 Where the user can log into their account or register for a new one if they need.
