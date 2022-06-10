@@ -93,13 +93,12 @@ Error: object
 
 
 ## Delete a ride
-`DELETE/ride`
+`DELETE/ride/{id}`
 ### Request
-Query
-`id: int, the id of the ride to be deleted` 
-**REQUIRED**
-Body
-`id: int, the id of the ride`
+Body:
+```
+id: int
+```
 ### Response
 #### HTTP Status Code 200
 Ride removed. No longer offered. 
@@ -118,10 +117,7 @@ Error: object
 ### Request
 Body:
 ```
-Name: a string
-Email: a string represents a valid email
-PhoneNumber: a string of ints
-Password: a string of characters
+account: Account
 ```
 ### Response
 #### HTTP Status Code 200
