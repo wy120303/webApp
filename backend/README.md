@@ -12,6 +12,7 @@
 # API Design Doc
 ## Introduce two structures:
 Ride: 
+```
 id: int
 date: a string in the format of mm/dd/yyyy
 time: a string in the format of hh:mm
@@ -19,15 +20,17 @@ departure: a string that represents a city name
 destination: a string that represents a city name
 num_seats: an int
 fee: a float
+```
 
 Account:
+```
 id: int
 name: a string
 email: a string represents a valid email
 phone_number: a string of numbers
 ride_offered: an array of Ride
 ride_booked: an array of Ride
-
+```
 
 ## Search for rides
 `GET/ride`
