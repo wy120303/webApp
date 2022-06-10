@@ -10,26 +10,42 @@
 ```
 
 # API Design Doc
+## Introduce two structures:
+Ride: 
+id: int
+date: a string in the format of mm/dd/yyyy
+time: a string in the format of hh:mm
+departure: a string that represents a city name
+destination: a string that represents a city name
+num_seats: an int
+fee: a float
+
+Account:
+id: int
+name: a string
+email: a string represents a valid email
+phone_number: a string of numbers
+ride_offered: an array of Ride
+ride_booked: an array of Ride
+
 
 ## Search for rides
 `GET/ride`
 ### Query 
-`Departure`
-`Destination`
+`departure`
+`destination`
+`time`
+`user_as_poster`
+`user_booked`
 ### Response
 #### HTTP Status Code 200 
 A list of rides are found. 
 Body: 
-A list of the information of the rides, each includes:
 ```
-Date: a string in the format of mm/dd/yyyy
-Time: a string in the format of hh:mm
-Departure: a string that represents a city name
-Destination: a string that represents a city name
-NumberOfSeats: an int
-Fee: a float
-AccountInfo: an instance of Account
+ride: Ride
+account: Account
 ```
+
 
 ## Get a specific ride
 `GET/ride/{id}`
@@ -38,21 +54,9 @@ AccountInfo: an instance of Account
 The specific ride corresponding to the id is found.
 Body:
 ```
-RideDetails: an instance of Ride
-  id: int
-  Date: a string in the format of mm/dd/yyyy
-  Time: a string in the format of hh:mm
-  Departure: a string that represents a city name
-  Destination: a string that represents a city name
-  NumberOfSeats: int
-  Fee: float
-ContactInfo: an array of objects, contact information of the poster
-  Name: a string
-  Email: a string represents a valid email
-  PhoneNumber: a string of numbers
+ride: Ride
+account: Account
 ```
-
-
 #### HTTP Status Code 404
 Ride not found.
 Body:
@@ -62,42 +66,21 @@ Error: object
   Message: string
 ```
 
+
 ## Post a ride
-`POST/account/{id}/ride`
+`POST/ride`
 ### Request
 Body:
 ```
-Date: a string in the format of mm/dd/yyyy
-Time: a string in the format of hh:mm
-Departure: a string that represents a city name
-Destination: a string that represents a city name
-NumberOfSeats: int
-Fee: float
-AccountInfo: an instance of Account
-  id: int
-  Name: a string
-  Email: a string represents a valid email
-  PhoneNumber: a string of numbers
+ride: Ride
+account: Account
 ```
-
 ### Response
 #### HTTP Status Code 200
+Body:
 ```
-RideDetails: an instance of Ride
-  Id: int
-  Date: a string in the format of mm/dd/yyyy
-  Time: a string in the format of hh:mm
-  Departure: a string that represents a city name
-  Destination: a string that represents a city name
-  NumberOfSeats: int
-  Fee: float
-AccountInfo: an instance of Account
-  id: int
-  Name: a string
-  Email: a string represents a valid email
-  PhoneNumber: a string of ints
-  RideOffered: an array of Ride
-  RideBooked: an array of Ride
+ride: Ride
+account: Account
 ```
 #### HTTP Status Code 401
 Bad or expired token.
@@ -108,11 +91,13 @@ Error: object
   Message: string
 ```
 
+
 ## Delete a ride
-`DELETE/account/{id}/ride`
+`DELETE/ride`
 ### Request
 Query
-`id: int, the id of the ride to be deleted` **REQUIRED**
+`id: int, the id of the ride to be deleted` 
+**REQUIRED**
 Body
 `id: int, the id of the ride`
 ### Response
@@ -129,50 +114,38 @@ Error: object
 
 
 ## Register for an account
-`POST/account`
+`POST/register`
 ### Request
 Body:
 ```
 Name: a string
 Email: a string represents a valid email
 PhoneNumber: a string of ints
-Password: a string of characters, length between 6 to 20
+Password: a string of characters
 ```
 ### Response
 #### HTTP Status Code 200
 a new account has been successfully registered. 
 Body:
 ```
-AccountInfo: an instance of Account
-  id: int
-  Name: a string
-  Email: a string represents a valid email
-  PhoneNumber: a string of ints
-  Password: a string of characters
-  RideOffered: an array of Ride
-  RideBooked: an array of Ride
+account: Account
 ```
 
 
 ## Log in to account
-`POST/account/{id}`
+`POST/login`
 ### Request 
+Body:
 ```
-Email: a string of a valid, registered email
-Password: a string of characters
+email: a string of a valid, registered email
+password: a string of characters
 ```
 ### Response
 #### HTTP Status Code 200
 Successfully sign in.
 Body:
 ```
-AccountInfo: an instance of Account
-  id: int
-  Name: a string
-  Email: a string represents a valid email
-  PhoneNumber: a string of ints
-  RideOffered: an array of Ride
-  RideBooked: an array of Ride
+account: Account
 ```
 
 #### HTTP Status Code 404
@@ -186,10 +159,10 @@ Error: object
 
 
 ## Comfirm a ride
-`PUT/ride`
+`PUT/ride/{id}/confirm`
 ### Request
-Query:
-`id: int` **REQUIRED**
+Body:
+`id: int`
 ### Response
 #### HTTP Status Code 200
 Ride booked.
@@ -204,10 +177,10 @@ Error: object
 
 
 ## Cancel booking
-`PUT/account/{id}/ride`
+`PUT/ride/{id}/cancel`
 ### Request
-Query:
-`id: int` **REQUIRED**
+Body:
+`id: int` 
 ### Response
 #### HTTP Status Code 200
 Ride cancelled.
