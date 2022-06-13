@@ -270,9 +270,8 @@ def comfirm_ride(current_user, id):
 def delete_ride(id):
     ride = Rides.query.get(id)
     ride.customer_id = None
-    return "Ride has been booked"
+    return "Ride has been cancelled"
 
 
 if __name__ == '__main__':
-    db.create_all()
     app.run(debug=True)
