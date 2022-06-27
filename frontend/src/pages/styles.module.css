@@ -1,0 +1,31 @@
+.home {
+    color: rgb(82, 143, 203);
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+    font-size: xx-large;
+    margin-top:11ch;
+    border: 3px solid rgb(82, 143, 203);
+    font-style:oblique;
+    font-weight: bold;
+  }
+
+  .login {
+    color: rgb(82, 143, 203);
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+    font-size: xx-large;
+    margin-top:3ch;
+    font-style:oblique;
+    font-weight: bold;
+  }
+  .t {
+    color: rgb(82, 143, 203);
+    padding: 3px;
+    font-family: Arial;
+    text-align: center;
+    font-size: larger;
+    margin-top: 2ch;
+    
+  }

@@ -1,6 +1,7 @@
 import { JSXElement } from "@babel/types";
 import React from "react";
 import Ride from '../App' 
+import styles from "./styles.module.css"
 
 function getRides(){
     //TODO: this is still not working, always getting an empty array
@@ -18,7 +19,8 @@ function getRides(){
 
 function RideSearch() {
     let rides = getRides()
-    // let rides = [ 
+
+    // // let rides = [ 
     //     {
     //         "customer_id": null,
     //         "date": "June 1, 2022",
@@ -46,11 +48,15 @@ function RideSearch() {
     //TODO: make each ride appear in a frame and is clickable, directs to the ride info
     let rides_list = rides.map((r:any)=><li>{r.date+ " at " + r.time+' from '+ r.departure+' to ' + r.destination+" price:" + r.fee+ " seats available: " + r.num_seats}</li>
     )
-    return <div>
-        <header style={{color: '#2147b0', fontSize: 40, marginTop:40}}>
+    return <div style={{
+        backgroundImage: 'url(https://www.drivepuertorico.com/wp-content/uploads/2021/04/drivepr-car-sharing.png)',
+         backgroundRepeat: "no-repeat",
+         backgroundPosition: '800px 340px', minHeight:800, minWidth:500,
+      }}>
+        <header className={styles.login} style={{fontSize: 40, marginTop:40}}>
             Your Search Result
         </header>
-        <ul style={{color: '#2147b0', fontSize: 20, marginTop:50}}>
+        <ul className = {styles.t} style={{color: '#2147b0', fontSize: 20, marginTop:50}}>
             {rides_list}
         </ul>
     </div>

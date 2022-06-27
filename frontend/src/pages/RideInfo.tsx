@@ -12,7 +12,11 @@ function getOneRide(id: number){
 }
 function RideInfo() {
     let navigate = useNavigate()
-    return <div>
+    return <div style={{
+        backgroundImage: 'url(https://www.drivepuertorico.com/wp-content/uploads/2021/04/drivepr-car-sharing.png)',
+         backgroundRepeat: "no-repeat",
+         backgroundPosition: '800px 360px', minHeight:800, minWidth:500,
+      }}>
          <Button variant='contained' color = "primary" onClick={() => {
           navigate("/profile"); alert("Successfully Booked")
         }}>

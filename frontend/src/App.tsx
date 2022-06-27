@@ -41,11 +41,18 @@ import  SearchorPost  from './pages/SearchOrPost';
 //   ride_booked: Ride[]
 // }
 
+// const myStyle={
+//   // backgroundImage: "url(https://www.drivepuertorico.com/wp-content/uploads/2021/04/drivepr-car-sharing.png)",
+//   // height:'100vh',
+//   // marginTop:'-70px',
+//   // fontSize:'50px',
+//   // backgroundSize: 'cover',
+// };
 
 function App() {
   return (
     <div className="App">
-      <header className="IthacaRideShare">
+      <header >
       </header>    
       <Router>
       <Routes>
