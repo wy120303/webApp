@@ -7,7 +7,7 @@ This website allows users who can offer a ride to a nearby city to post their in
 Shows the name of the website and a brief description of it. Also asks the user to log in or create an account. After logged in, the user will be directed to the home page.
 
 ### Home
-This page should have two butttoms for the users to click：1. post a ride； 2. seek for a ride. Upon clicking one buttom, the Home page should be redirected to the corresponding page.
+This page asks the user to log in. It also has two butttons for the users to click：1. post a ride； 2. seek for a ride. Upon clicking one buttom, the Home page should be redirected to the corresponding page if the user has been logged in.
 
 ### Post a Ride
 This page should allow the users to input their information, including date, time, departure city, destination, number of seats available, a share fee. These information has to be filled out, and there is also a space to leave optional comments. 
