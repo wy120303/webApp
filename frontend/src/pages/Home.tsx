@@ -1,12 +1,11 @@
 import React from "react";
 import {useNavigate} from "react-router-dom"
 import Button from '@material-ui/core/Button'
-import './SearchOrPost.css'
 
 function Home() {
     let navigate = useNavigate()
     return <div> 
-        <header style={{color: 'black', fontSize: 40, marginTop: 100}}>
+        <header style={{color:'#2147b0', fontSize: 30, fontWeight: "bold", marginTop: 100}}>
             Welcome to Ithaca Ride Share
         </header>
     <p></p>

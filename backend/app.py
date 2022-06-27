@@ -237,28 +237,17 @@ def add_ride():
 
 # Get all Rides
 @app.route("/ride", methods=["GET"])
+@cross_origin()
 # @token_required
 def get_all_rides():
-    output = []
     dep = request.form.get('departure')
     des = request.form.get('destination')
     if None in (dep, des):
         rides = Rides.query.all()
-        for r in rides:
-            ride_info = {'id': r.id, 'date': r.date, 'time': r.time,
-                        'departure': r.departure, 'destination': 
-                        r.destination, 'num_seats': r.num_seats, 
-                        'fee': r.fee}
-            output.append(ride_info)
     else:
         rides = Rides.query.filter_by(departure=dep, destination=des).all()
-        for r in rides:
-            ride_info = {'id': r.id, 'date': r.date, 'time': r.time,
-                        'departure': r.departure, 'destination': 
-                        r.destination, 'num_seats': r.num_seats, 
-                        'fee': r.fee}
-        output.append(ride_info)      
-    return str(output)
+    result = rides_schema.dump(rides)
+    return jsonify(result)
 
 
 # Get a specific ride

@@ -41,32 +41,6 @@ import  SearchorPost  from './pages/SearchOrPost';
 //   ride_booked: Ride[]
 // }
 
-// const getRides = async (): Promise<Ride[]> =>
-//   await (await fetch('http://127.0.0.1:5000/ride')).json();
-
-// function getUserInfo(user: User){
-
-// }
-
-// function book_a_ride(user_id: number, chosen_ride: Ride){
-
-// }
-
-// function delete_a_ride(user: User, chosen_ride: Ride ){
-
-// }
-
-// function login(email: string, password: string){
-
-// }
-
-// function register(name: string, email: string, password: string, phone_number: string){
-
-// }
-
-// function post_a_ride(user_id: User,date: string, departure: string, destination: string, num_seats: string, fee: number){
-
-// }
 
 function App() {
   return (
@@ -77,9 +51,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/ride" element={<RideSearch/>} />
-        <Route path="/ride/{id}" element={<RideInfo/>} />
+        <Route path="/rideinfo" element={<RideInfo/>} />
         <Route path="/post" element={<RidePost/>} />
-        <Route path="/profile/:usesid" element={<Profile/>} />
+        <Route path="/profile" element={<Profile/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<LogIn/>} />
         <Route path="/option" element={<SearchorPost/>} />
