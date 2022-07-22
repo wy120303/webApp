@@ -10,6 +10,7 @@ function getOneRide(id: number){
         console.log(data)
     })
 }
+
 function RideInfo() {
     let navigate = useNavigate()
     return <div style={{
